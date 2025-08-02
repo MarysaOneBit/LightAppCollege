@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp">
+
+    <TextView
+        android:id="@+id/item_lesson_number_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1. Название предмета"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/item_lesson_teacher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Преподаватель: Фамилия И.О."
+        android:textColor="#DDDDDD"
+        android:textSize="12sp"
+        android:layout_marginStart="8dp"/> <TextView
+    android:id="@+id/item_lesson_cabinet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Кабинет: 123"
+    android:textColor="#DDDDDD"
+    android:textSize="12sp"
+    android:layout_marginStart="8dp"/> </LinearLayout>

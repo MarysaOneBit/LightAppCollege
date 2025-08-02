@@ -34,8 +34,8 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
     public void onBindViewHolder(@NonNull LessonViewHolder holder, int position) {
         // Привязываем данные из объекта Lesson к элементам View в ViewHolder
         Lesson lesson = lessonList.get(position);
-        holder.lessonNumberTextView.setText("Пара №" + lesson.getNumber());
-        holder.lessonNameTextView.setText("Название: " + lesson.getName());
+        holder.lessonNumberTextView.setText("Пара №" + lesson.getLessonNumber());
+        holder.lessonNameTextView.setText("Название: " + lesson.getLessonName());
         holder.teacherTextView.setText("Преподаватель: " + lesson.getTeacher());
         holder.cabinetTextView.setText("Кабинет: " + lesson.getCabinet());
     }

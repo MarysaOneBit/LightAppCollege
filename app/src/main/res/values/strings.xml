@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Расписание</string>
+    <string name="widget_description">Выводит данные на экран</string>
 </resources>
