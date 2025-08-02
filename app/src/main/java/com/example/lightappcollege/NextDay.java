@@ -72,16 +72,19 @@ public class NextDay extends AppCompatActivity {
                     finish();
                     return true;
                 } else if (itemId == R.id.nav_tomorrow) {
-                    // TODO: Запустить новую Activity для расписания на завтра
+
                     screenTitleTextView.setText("Расписание на завтра"); // Устанавливаем заголовок
 
-                    bottomNavigationView.getMenu().findItem(R.id.nav_tomorrow).setChecked(true); // Возвращаем выбор на "Сегодня"
 
                     return true;
                 } else if (itemId == R.id.nav_info) {
 
-                    // Устанавливаем правильный выбранный пункт в меню
-                    bottomNavigationView.getMenu().findItem(R.id.nav_info).setChecked(true); // Возвращаем выбор на "Сегодня"
+                    Intent intent = new Intent(NextDay.this, MainActivity.class);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+
+
                     return true;
                 }
                 return false;

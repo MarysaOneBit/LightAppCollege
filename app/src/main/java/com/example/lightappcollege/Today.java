@@ -74,14 +74,16 @@ public class Today extends AppCompatActivity {
                     Intent intent = new Intent( Today.this, NextDay.class);
                     startActivity(intent);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    bottomNavigationView.getMenu().findItem(R.id.nav_tomorrow).setChecked(true); // Возвращаем выбор на "Сегодня"
                     finish();
 
                     return true;
                 } else if (itemId == R.id.nav_info) {
 
+                    Intent intent = new Intent(Today.this, MainActivity.class);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
                     // Устанавливаем правильный выбранный пункт в меню
-                    bottomNavigationView.getMenu().findItem(R.id.nav_info).setChecked(true); // Возвращаем выбор на "Сегодня"
                     return true;
                 }
                 return false;

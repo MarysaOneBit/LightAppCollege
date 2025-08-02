@@ -1,11 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/screenTitleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="25dp"
+        android:paddingBottom="8dp"
+        android:paddingHorizontal="16dp"
+        android:text="Информация"
+        android:gravity="center"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        android:textStyle="bold"
+        android:background="?attr/colorPrimary"
+        android:textColor="?attr/colorOnPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/developer_info_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/screenTitleTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation">
+
+        <ImageView
+            android:layout_width="129dp"
+            android:layout_height="112dp"
+            android:src="@drawable/developer" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Данил Сердцев"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Разработчик приложения"
+            android:textAppearance="?attr/textAppearanceSubtitle1"/>
+
+        <TextView
+            android:id="@+id/telegramLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="\@Marysa151 (Telegram)"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:textColor="?attr/colorPrimary"
+            android:autoLink="web"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground"
+            android:drawableStart="@drawable/ic_telegram_24"
+            android:drawablePadding="8dp" />
+        <TextView
+            android:id="@+id/vkLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="vk.com/dserdtsev1 (ВКонтакте)"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:textColor="?attr/colorPrimary"
+            android:autoLink="web"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground"
+            android:drawableStart="@drawable/ic_vk_24"
+            android:drawablePadding="8dp" />
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
