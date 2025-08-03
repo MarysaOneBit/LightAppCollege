@@ -11,7 +11,7 @@
         android:id="@+id/screenTitleTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingTop="16dp"
+        android:paddingTop="25dp"
         android:paddingBottom="8dp"
         android:paddingHorizontal="16dp"
         android:text="Сегодня"
