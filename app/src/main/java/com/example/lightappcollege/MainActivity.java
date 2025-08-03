@@ -58,8 +58,15 @@ public class MainActivity extends AppCompatActivity {
 
                     // Устанавливаем правильный выбранный пункт в меню
                     return true;
+                }else if (itemId == R.id.nav_alarms) {
+
+                    Intent intent = new Intent(MainActivity.this, RaspAlarms.class);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
                 }
                 return false;
+
             }
         });
 

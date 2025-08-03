@@ -12,8 +12,11 @@
         android:title="Завтра" />
 
     <item
+        android:id="@+id/nav_alarms"
+        android:icon="@drawable/ic_alarms"
+        android:title="Звонки" />
+    <item
         android:id="@+id/nav_info"
         android:icon="@drawable/ic_info"
         android:title="Информация" />
-
 </menu>

@@ -90,6 +90,12 @@ public class NextDay extends AppCompatActivity {
 
 
                     return true;
+                }else if (itemId == R.id.nav_alarms) {
+
+                    Intent intent = new Intent(NextDay.this, RaspAlarms.class);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
                 }
                 return false;
             }
