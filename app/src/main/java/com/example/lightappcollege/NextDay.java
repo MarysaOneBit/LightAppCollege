@@ -24,8 +24,14 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Locale;
 
 public class NextDay extends AppCompatActivity {
     private static final String TAG = "ScheduleParser";
@@ -64,7 +70,6 @@ public class NextDay extends AppCompatActivity {
                 int itemId = item.getItemId();
 
                 if (itemId == R.id.nav_today) {
-                    screenTitleTextView.setText("Расписание на сегодня"); // Устанавливаем заголовок
 
                     Intent intent = new Intent(NextDay.this, Today.class);
                     startActivity(intent);
@@ -73,7 +78,6 @@ public class NextDay extends AppCompatActivity {
                     return true;
                 } else if (itemId == R.id.nav_tomorrow) {
 
-                    screenTitleTextView.setText("Расписание на завтра"); // Устанавливаем заголовок
 
 
                     return true;
@@ -93,7 +97,17 @@ public class NextDay extends AppCompatActivity {
 
         // Устанавливаем выбранным по умолчанию пункт "Завтра" и соответствующий заголовок
         bottomNavigationView.setSelectedItemId(R.id.nav_tomorrow);
-        screenTitleTextView.setText("Расписание на завтра"); // Устанавливаем текст заголовка при старте
+        Calendar calendar = Calendar.getInstance();
+
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+
+        Date today = calendar.getTime();
+        calendar.add(Calendar.DAY_OF_YEAR, 1);
+        Date tomorrow = calendar.getTime();
+
+        String tomorrowAsString = dateFormat.format(tomorrow);
+
+        screenTitleTextView.setText("Расписание на "+tomorrowAsString); // Устанавливаем текст заголовка при старте
 
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         final String savedGroup = prefs.getString(KEY_GROUP_NUMBER, "");

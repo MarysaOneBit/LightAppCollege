@@ -24,8 +24,11 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class Today extends AppCompatActivity {
     private static final String TAG = "ScheduleParser";
@@ -64,13 +67,11 @@ public class Today extends AppCompatActivity {
                 int itemId = item.getItemId();
 
                 if (itemId == R.id.nav_today) {
-                    screenTitleTextView.setText("Расписание на сегодня"); // Устанавливаем заголовок
 
 
                     return true;
                 } else if (itemId == R.id.nav_tomorrow) {
                     // TODO: Запустить новую Activity для расписания на завтра
-                    screenTitleTextView.setText("Расписание на завтра"); // Устанавливаем заголовок
                     Intent intent = new Intent( Today.this, NextDay.class);
                     startActivity(intent);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
@@ -92,7 +93,8 @@ public class Today extends AppCompatActivity {
 
         // Устанавливаем выбранным по умолчанию пункт "Сегодня" и соответствующий заголовок
         bottomNavigationView.setSelectedItemId(R.id.nav_today);
-        screenTitleTextView.setText("Расписание на сегодня"); // Устанавливаем текст заголовка при старте
+        String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        screenTitleTextView.setText("Расписание на "+currentDate); // Устанавливаем текст заголовка при старте
 
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         final String savedGroup = prefs.getString(KEY_GROUP_NUMBER, "");
